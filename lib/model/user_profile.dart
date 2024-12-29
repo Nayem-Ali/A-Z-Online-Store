@@ -13,6 +13,7 @@ class UserProfile {
 
   factory UserProfile.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> snapshot){
     final data = snapshot.data()!;
+    print(data);
     return UserProfile(name: data['name'], email: data['email'], uid: data['uid']);
   }
 

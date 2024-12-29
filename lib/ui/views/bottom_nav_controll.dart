@@ -22,7 +22,7 @@ class BottomNavController extends StatelessWidget {
           preferredSize: Size(double.infinity, 60.h),
           child: AppBar(
             title: const Text(
-              "ART Shop SYL",
+              "A-Z Online Store",
               style: TextStyle(
                 color: AppColors.whiteColor,
                 fontWeight: FontWeight.bold,

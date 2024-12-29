@@ -11,15 +11,14 @@ class Splash extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CircleAvatar(
-              radius: 80.r,
-              backgroundImage: const AssetImage(
-                'assets/icons/artshop.jpg',
+            Image(
+              image: const AssetImage(
+                'assets/icons/logo.png',
               ),
             ),
             SizedBox(height: 30.h),
             Text(
-              "ArtShop Sylhet",
+              "A-Z Online Store",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 30.h,

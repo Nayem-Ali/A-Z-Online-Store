@@ -57,11 +57,14 @@ class Home extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            CachedNetworkImage(
-                              imageUrl: snapshot.data![index].thumbnail,
-                              height: 100,
-                              fit: BoxFit.cover,
-                              errorWidget: (context, url, error) => const Icon(Icons.error),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: CachedNetworkImage(
+                                imageUrl: snapshot.data![index].thumbnail,
+                                height: 100,
+                                fit: BoxFit.cover,
+                                errorWidget: (context, url, error) => const Icon(Icons.adb),
+                              ),
                             ),
                             Text(
                               snapshot.data![index].title,
@@ -146,13 +149,16 @@ class ProductDetails extends StatelessWidget {
                   return Container(
                     decoration: BoxDecoration(
                       border: Border.all(),
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(20),
                     ),
                     margin: const EdgeInsets.symmetric(horizontal: 5),
-                    child: CachedNetworkImage(
-                      imageUrl: data.images[index],
-                      fit: BoxFit.cover,
-                      errorWidget: (context, url, error) => const Icon(Icons.error, size: 200),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: CachedNetworkImage(
+                        imageUrl: data.images[index],
+                        fit: BoxFit.cover,
+                        errorWidget: (context, url, error) => const Icon(Icons.error, size: 200),
+                      ),
                     ),
                   );
                 },

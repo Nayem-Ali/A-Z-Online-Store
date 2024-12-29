@@ -13,12 +13,15 @@ class FirestoreDB {
   final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
 
   Future<UserProfile> getUserProfile() async {
+    print("called");
     final auth = FirebaseAuth.instance;
     final snapshot = await _firebaseFirestore
         .collection('user')
         .where('email', isEqualTo: auth.currentUser!.email)
         .get();
+    print("email ${snapshot.docs.first.data()}");
     final userData = snapshot.docs.map((data) => UserProfile.fromSnapshot(data)).single;
+    print(userData);
     return userData;
   }
 

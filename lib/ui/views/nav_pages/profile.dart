@@ -1,8 +1,11 @@
 import 'package:ecommerce/model/user_profile.dart';
 import 'package:ecommerce/services/firestore_db.dart';
+import 'package:ecommerce/ui/route/route.dart';
 import 'package:ecommerce/ui/widgets/custom_button.dart';
 import 'package:ecommerce/ui/widgets/custom_text_field.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Profile extends StatelessWidget {
   Profile({Key? key}) : super(key: key);
@@ -17,6 +20,7 @@ class Profile extends StatelessWidget {
       future: FirestoreDB().getUserProfile(),
       builder: (_, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
+          debugPrint("${snapshot.data}");
           if (snapshot.hasData) {
             UserProfile userProfile = snapshot.data as UserProfile;
             _nameController.text = userProfile.name;
@@ -54,6 +58,11 @@ class Profile extends StatelessWidget {
                         uid: _uidController.text.trim(),
                       );
                       await FirestoreDB().updateUserProfile(updatedData);
+                    }),
+                    customButton("Logout", (){
+                      final auth = FirebaseAuth.instance;
+                      auth.signOut();
+                      Get.offAllNamed(login);
                     })
                   ],
                 ),
