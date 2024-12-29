@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "415196125736",
+    "project_id": "art-shop-sylhet",
+    "storage_bucket": "art-shop-sylhet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:415196125736:android:f7de437de4468dba40331d",
+        "android_client_info": {
+          "package_name": "com.example.ecommerce"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxcj_fNDUnY6ll1gpY0kcTl8BtL93fGSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
